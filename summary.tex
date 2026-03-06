@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue]{hyperref}
+
+\title{Summary of the Markov Chain Voltage Quality Model\\and Entropy-Based Predictability Measures}
+\author{Reference summary for:\\
+\textit{Electricity Access Is Not Enough: Evidence from Voltage Quality}\\
+\textit{Monitoring in Kampala's Informal Settlements}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+
+This document summarizes the probabilistic model and entropy framework developed in the Kampala power quality study. The paper deploys high-frequency voltage sensors across 150 households and businesses in 25 formal and informal settlements in Kampala, Uganda. Beyond descriptive statistics of voltage quality, the study introduces a first-order Markov chain over an enriched state space to characterize the \emph{persistence} and \emph{predictability} of voltage conditions. Two entropy measures---conditional entropy and joint entropy---are derived from this model to quantify how stochastic or deterministic the grid's voltage behavior is over time.
+
+\section{The Enriched-State Markov Chain Model}
+
+\subsection{State Definition}
+
+At each discrete time step $t$, the system state is defined as the triplet
+\[
+    x_t = (i_t,\; d_t,\; s_t),
+\]
+where:
+\begin{itemize}
+    \item $i_t \in \mathcal{I}$ is the \textbf{time-of-day interval}. The 24-hour day is discretized into 12 two-hour bins:
+    \[
+        \mathcal{I} = \bigl\{\, [0\text{-}2),\; [2\text{-}4),\; \ldots,\; [22\text{-}24) \,\bigr\}.
+    \]
+    \item $d_t \in \mathcal{D}$ is the \textbf{duration class}, capturing how long the system has remained continuously in its current voltage condition:
+    \[
+        \mathcal{D} = \bigl\{\, [0\text{-}2)\text{ hrs},\; [2\text{-}4)\text{ hrs},\; 4{+}\text{ hrs} \,\bigr\}.
+    \]
+    \item $s_t \in \mathcal{S}$ is the \textbf{instantaneous voltage state}:
+    \[
+        \mathcal{S} = \bigl\{\, \text{Usable},\; \text{Unacceptable},\; \text{Outage} \,\bigr\}.
+    \]
+\end{itemize}
+The full state space is $\mathcal{X} = \mathcal{I} \times \mathcal{D} \times \mathcal{S}$, giving $|\mathcal{X}| = 12 \times 3 \times 3 = 108$ composite states.
+
+\subsection{Why an Enriched State Space?}
+
+A na\"ive Markov model over the three voltage labels alone would miss two dynamics that are essential in the Kampala context:
+\begin{enumerate}
+    \item \textbf{Time-of-day dependence.} Voltage drops concentrate during morning (5--10\,am) and evening (3:30--8\,pm) peaks. Encoding the time bin lets the model capture these diurnal patterns without requiring a non-homogeneous (time-varying) transition matrix.
+    \item \textbf{Duration dependence (semi-Markov behavior).} Once a household enters a low-voltage or outage state, it tends to \emph{stay} there for extended periods. By including the duration class in the state, the model distinguishes a household that just entered an outage from one that has been in outage for over four hours, each having different likelihoods of recovery.
+\end{enumerate}
+Because all relevant history is folded into $x_t$, the process satisfies the first-order Markov property:
+\[
+    p(x_t \mid x_{t-1}, x_{t-2}, \ldots) = p(x_t \mid x_{t-1}).
+\]
+
+\subsection{Transition Probability Estimation}
+
+The transition probability
+\[
+    p(x_t \mid x_{t-1}) = p(i_t, d_t, s_t \mid i_{t-1}, d_{t-1}, s_{t-1})
+\]
+is estimated empirically by counting observed transitions in the sensor data and normalizing:
+\[
+    \hat{p}(x_t \mid x_{t-1})
+    = \frac{\mathrm{count}(x_{t-1} \to x_t)}
+           {\displaystyle\sum_{x_t'}\mathrm{count}(x_{t-1} \to x_t')}.
+\]
+This is the maximum-likelihood estimator (MLE) for discrete transition probabilities. In what follows, we write $p$ in place of $\hat{p}$ for notational convenience.
+The result is a $108 \times 108$ transition matrix $P$. Dominant diagonal entries indicate persistent voltage conditions (the system tends to stay in the same composite state), while off-diagonal entries reveal characteristic transition pathways, such as evening-hour shifts from Unacceptable to Outage.
+
+\subsection{Stationary Distribution}
+
+Under the assumption that the chain is ergodic (irreducible and aperiodic), a unique stationary distribution $p(x)$ exists and satisfies the balance equation
+\[
+    p(x) = \sum_{x'} p(x \mid x')\, p(x'),
+    \qquad\text{equivalently}\qquad
+    P^\top \mathbf{p} = \mathbf{p},
+\]
+where $\mathbf{p}$ is the vectorized stationary distribution. In the stationary regime the marginal distribution over states is time-independent, so $p(x_{t-1}) = p(x)$ for all $t$. This distribution is needed to weight the entropy calculations below.
+
+
+\section{Entropy Derivations}
+
+Two complementary entropy measures are derived from the Markov model. Both are expressed in terms of the composite state $x = (i, d, s)$.
+
+\subsection{Conditional Entropy of Transitions}
+
+The conditional entropy is defined as
+\[
+\begin{aligned}
+    H(X_t \mid X_{t-1})
+    &= -\sum_{x_{t-1} \in \mathcal{X}} p(x_{t-1})
+        \sum_{x_t \in \mathcal{X}} p(x_t \mid x_{t-1})
+        \log p(x_t \mid x_{t-1}).
+\end{aligned}
+\]
+Fully expanded over the three state dimensions:
+\[
+\begin{aligned}
+    H(X_t \mid X_{t-1})
+    = \; & -\sum_{i_{t-1} \in \mathcal{I}}
+            \sum_{d_{t-1} \in \mathcal{D}}
+            \sum_{s_{t-1} \in \mathcal{S}}
+            p(i_{t-1}, d_{t-1}, s_{t-1}) \\
+         & \times
+            \sum_{i_t \in \mathcal{I}}
+            \sum_{d_t \in \mathcal{D}}
+            \sum_{s_t \in \mathcal{S}}
+            p(i_t, d_t, s_t \mid i_{t-1}, d_{t-1}, s_{t-1}) \\
+         & \times
+            \log p(i_t, d_t, s_t \mid i_{t-1}, d_{t-1}, s_{t-1}).
+\end{aligned}
+\]
+
+\paragraph{What it measures.}
+$H(X_t \mid X_{t-1})$ answers the question: \emph{Given that we know the current time-of-day bin, how long voltage has been in its present condition, and what that condition is, how uncertain are we about the next state?} It isolates the randomness of the transitions themselves, independent of the overall distribution of states. For a stationary Markov chain this quantity equals the \textbf{entropy rate}---the asymptotic per-step uncertainty as the chain evolves.
+
+\subsection{Joint Entropy of Consecutive States}
+
+The joint entropy is defined as
+\[
+\begin{aligned}
+    H(X_t, X_{t-1})
+    &= -\sum_{x_{t-1} \in \mathcal{X}}
+        \sum_{x_t \in \mathcal{X}}
+        p(x_t, x_{t-1})
+        \log p(x_t, x_{t-1}),
+\end{aligned}
+\]
+where the joint distribution factorizes via the chain rule:
+\[
+    p(x_t, x_{t-1}) = p(x_t \mid x_{t-1})\, p(x_{t-1}).
+\]
+Fully expanded:
+\[
+\begin{aligned}
+    H(X_t, X_{t-1})
+    = \; & -\sum_{i_{t-1} \in \mathcal{I}}
+            \sum_{d_{t-1} \in \mathcal{D}}
+            \sum_{s_{t-1} \in \mathcal{S}}
+            \sum_{i_t \in \mathcal{I}}
+            \sum_{d_t \in \mathcal{D}}
+            \sum_{s_t \in \mathcal{S}} \\
+         & \quad p(i_t, d_t, s_t,\, i_{t-1}, d_{t-1}, s_{t-1})\\
+         & \quad\times
+            \log p(i_t, d_t, s_t,\, i_{t-1}, d_{t-1}, s_{t-1}).
+\end{aligned}
+\]
+
+\paragraph{What it measures.}
+$H(X_t, X_{t-1})$ captures the \emph{total} uncertainty in a snapshot of two consecutive states. It decomposes as
+\[
+    H(X_t, X_{t-1}) = H(X_{t-1}) + H(X_t \mid X_{t-1}),
+\]
+so it includes both the marginal entropy $H(X_{t-1})$ (how diverse the occupied states are) and the conditional entropy (how unpredictable transitions are). A system can have high joint entropy because it visits many different states, because its transitions are unpredictable, or both.
+
+\subsection{Relationship Between the Two Measures}
+
+The decomposition $H(X_t, X_{t-1}) = H(X_{t-1}) + H(X_t \mid X_{t-1})$ provides a clean way to separate two sources of system complexity:
+\begin{itemize}
+    \item $H(X_{t-1})$: \textbf{state diversity}---how spread out the system is across the 108 possible states.
+    \item $H(X_t \mid X_{t-1})$: \textbf{transition unpredictability}---how random the next step is once the current state is known.
+\end{itemize}
+By comparing the two, one can determine whether high overall complexity stems from the grid exploring many different conditions (high $H(X_{t-1})$), from erratic switching behavior (high $H(X_t \mid X_{t-1})$), or from both.
+
+
+\section{Interpretation in the Kampala Context}
+
+\subsection{Conditional Entropy as the Primary Predictability Metric}
+
+The conditional entropy $H(X_t \mid X_{t-1})$ is the paper's primary tool for assessing \emph{how predictable} voltage behavior is:
+
+\begin{itemize}
+    \item \textbf{Low $H(X_t \mid X_{t-1})$} indicates that knowing the current composite state strongly constrains the next state. In practice this corresponds to \emph{persistent} voltage conditions: once the grid enters an outage or a low-voltage state, it tends to stay there, and conversely for usable voltage. The system is predictable, even if the conditions are poor.
+    \item \textbf{High $H(X_t \mid X_{t-1})$} indicates that the next state is difficult to anticipate, reflecting abrupt and unpredictable transitions between Usable, Unacceptable, and Outage states. For households this translates to an inability to plan cooking, business, or study activities around the power supply.
+\end{itemize}
+
+\subsection{Joint Entropy as a Measure of System Complexity}
+
+The joint entropy $H(X_t, X_{t-1})$ provides a broader view:
+
+\begin{itemize}
+    \item \textbf{High joint entropy} means the system frequently visits a wide variety of state combinations (different times of day, durations, and voltage conditions), reflecting both temporal variability and operational complexity. This pattern is characteristic of regions with erratic power supply.
+    \item \textbf{Low joint entropy} means the system concentrates on a small subset of state combinations, which can indicate either stable service delivery (most time spent in Usable states) or chronic failure (most time spent in Outage at certain hours).
+\end{itemize}
+
+\subsection{Key Empirical Findings}
+
+The paper reports the following results from applying this framework:
+\begin{enumerate}
+    \item Informal settlements exhibit \textbf{higher entropy} than formal settlements, confirming more erratic and less predictable voltage behavior.
+    \item Sites with both high entropy \emph{and} low probability of usable voltage (e.g., Kyebando, Mulago~II, Kabuuyo) are identified as the most vulnerable, experiencing power that is both poor and unpredictable.
+    \item The transition matrix reveals strong \textbf{diagonal dominance} (persistence), but with notable off-diagonal clusters around evening peak hours, where transitions from Unacceptable to Outage are common.
+    \item The framework supports the concept of \textbf{temporal energy poverty}: electricity may be nominally available but is unreliable or unusable precisely during the hours when households need it most.
+\end{enumerate}
+
+\subsection{Policy Relevance}
+
+Together the model and entropy measures argue that binary access metrics (connected vs.\ not) and even the Multi-Tier Framework's static tier classifications are insufficient. Voltage \emph{predictability} and \emph{temporal persistence} are dimensions that directly affect whether a household can reliably cook, refrigerate food, run a business, or charge essential devices. The entropy framework provides a compact, quantitative basis for comparing settlements, evaluating infrastructure interventions, and monitoring improvements over time.
+
+\end{document}
