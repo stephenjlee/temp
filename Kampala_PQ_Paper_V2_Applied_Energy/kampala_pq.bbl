@@ -6,101 +6,157 @@
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
 \bibitem{SDG7Report2020}
-U.~W. B.~W. IEA, IRENA, Tracking {SDG} 7: The energy progress report, washington, DC (2020).
+U.~W. B.~W. IEA, IRENA, Tracking {SDG} 7: The energy progress report,
+  washington, DC (2020).
 
 \bibitem{IEA2023Electricity}
-{International Energy Agency (IEA)}, {Access to electricity improves slightly in 2023, but still far from the pace needed to meet SDG7}, \url{https://www.iea.org/commentaries/access-to-electricity-improves-slightly-in-2023-but-still-far-from-the-pace-needed-to-meet-sdg7}, iEA, Paris. Licence: CC BY 4.0 (2023).
+{International Energy Agency (IEA)}, {Access to electricity improves slightly
+  in 2023, but still far from the pace needed to meet SDG7},
+  \url{https://www.iea.org/commentaries/access-to-electricity-improves-slightly-in-2023-but-still-far-from-the-pace-needed-to-meet-sdg7},
+  iEA, Paris. Licence: CC BY 4.0 (2023).
 
 \bibitem{ayaburi2020measuring}
-J.~Ayaburi, M.~Bazilian, J.~Kincer, T.~Moss, Measuring “reasonably reliable” access to electricity services, The Electricity Journal 33~(7) (2020) 106828.
+J.~Ayaburi, M.~Bazilian, J.~Kincer, T.~Moss, Measuring “reasonably
+  reliable” access to electricity services, The Electricity Journal 33~(7)
+  (2020) 106828.
 
 \bibitem{sdg72025}
-{International Energy Agency (IEA)}, {International Renewable Energy Agency (IRENA)}, {United Nations Statistics Division (UNSD)}, {World Bank}, {World Health Organization (WHO)}, \href{https://www.iea.org/reports/tracking-sdg7-the-energy-progress-report-2025}{Tracking sdg 7: The energy progress report 2025}, accessed: January 2026 (2025).
+{International Energy Agency (IEA)}, {International Renewable Energy Agency
+  (IRENA)}, {United Nations Statistics Division (UNSD)}, {World Bank}, {World
+  Health Organization (WHO)},
+  \href{https://www.iea.org/reports/tracking-sdg7-the-energy-progress-report-2025}{Tracking
+  sdg 7: The energy progress report 2025}, accessed: January 2026 (2025).
 \newline\urlprefix\url{https://www.iea.org/reports/tracking-sdg7-the-energy-progress-report-2025}
 
 \bibitem{IEA2024SDG7}
-{International Energy Agency (IEA)}, {SDG7: Data and Projections}, IEA, Paris. \url{https://www.iea.org/reports/sdg7-data-and-projections} (Licence: CC BY 4.0) (2024).
+{International Energy Agency (IEA)}, {SDG7: Data and Projections}, IEA, Paris.
+  \url{https://www.iea.org/reports/sdg7-data-and-projections} (Licence: CC BY
+  4.0) (2024).
 
 \bibitem{broto2017energy}
-V.~C. Broto, Energy landscapes and urban trajectories towards sustainability, Energy Policy 108 (2017) 755--764.
+V.~C. Broto, Energy landscapes and urban trajectories towards sustainability,
+  Energy Policy 108 (2017) 755--764.
 
 \bibitem{adams2018intra}
-E.~A. Adams, Intra-urban inequalities in water access among households in malawi's informal settlements: Toward pro-poor urban water policies in africa, Environmental Development 26 (2018) 34--42.
+E.~A. Adams, Intra-urban inequalities in water access among households in
+  malawi's informal settlements: Toward pro-poor urban water policies in
+  africa, Environmental Development 26 (2018) 34--42.
 
 \bibitem{Cabrita2024Preprint}
-S.~Cabrita, J.~S. Matos, F.~Ferreira, \href{https://doi.org/10.20944/preprints202409.0105.v1}{Critical infrastructures in an informal settlement of maputo city, mozambique: The special importance of sectors interdependencies for interventions prioritization}, PreprintsPreprint, not peer-reviewed (2024).
-\newblock \href {https://doi.org/10.20944/preprints202409.0105.v1} {\path{doi:10.20944/preprints202409.0105.v1}}.
+S.~Cabrita, J.~S. Matos, F.~Ferreira,
+  \href{https://doi.org/10.20944/preprints202409.0105.v1}{Critical
+  infrastructures in an informal settlement of maputo city, mozambique: The
+  special importance of sectors interdependencies for interventions
+  prioritization}, PreprintsPreprint, not peer-reviewed (2024).
+\newblock \href {https://doi.org/10.20944/preprints202409.0105.v1}
+  {\path{doi:10.20944/preprints202409.0105.v1}}.
 \newline\urlprefix\url{https://doi.org/10.20944/preprints202409.0105.v1}
 
 \bibitem{Madzivhandila2024Climate}
-T.~Madzivhandila, A.~Asha, \href{https://doi.org/10.14426/ahmr.v10i2.2305}{Does climate change transfer poverty from rural to urban areas? implications for regional sub-saharan research agenda}, African Human Mobility Review 10~(2) (May-August 2024).
-\newblock \href {https://doi.org/10.14426/ahmr.v10i2.2305} {\path{doi:10.14426/ahmr.v10i2.2305}}.
+T.~Madzivhandila, A.~Asha, \href{https://doi.org/10.14426/ahmr.v10i2.2305}{Does
+  climate change transfer poverty from rural to urban areas? implications for
+  regional sub-saharan research agenda}, African Human Mobility Review 10~(2)
+  (May-August 2024).
+\newblock \href {https://doi.org/10.14426/ahmr.v10i2.2305}
+  {\path{doi:10.14426/ahmr.v10i2.2305}}.
 \newline\urlprefix\url{https://doi.org/10.14426/ahmr.v10i2.2305}
 
 \bibitem{TodesGoodfellow2024}
-A.~Todes, T.~Goodfellow, \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Visions of the urban periphery: Ethiopia and south africa}, in: Living the Urban Periphery: Infrastructure, Everyday Life and Economic Change in African City-Regions, Manchester University Press, 2024, pp. 47--64, open Access, CC BY-NC-ND.
+A.~Todes, T.~Goodfellow,
+  \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Visions of the
+  urban periphery: Ethiopia and south africa}, in: Living the Urban Periphery:
+  Infrastructure, Everyday Life and Economic Change in African City-Regions,
+  Manchester University Press, 2024, pp. 47--64, open Access, CC BY-NC-ND.
 \newline\urlprefix\url{https://creativecommons.org/licenses/by-nc-nd/4.0/}
 
 \bibitem{adams2017water}
-E.~A. Adams, Intra-urban inequalities in water access among households in malawi's informal settlements: Toward pro-poor urban water policies in africa, Environmental Development 24 (2017) 73--87.
-\newblock \href {https://doi.org/10.1016/j.envdev.2017.09.003} {\path{doi:10.1016/j.envdev.2017.09.003}}.
+E.~A. Adams, Intra-urban inequalities in water access among households in
+  malawi's informal settlements: Toward pro-poor urban water policies in
+  africa, Environmental Development 24 (2017) 73--87.
+\newblock \href {https://doi.org/10.1016/j.envdev.2017.09.003}
+  {\path{doi:10.1016/j.envdev.2017.09.003}}.
 
 \bibitem{stevanato2023access}
-N.~Stevanato, R.~Mereu, A.~Brasco, A.~Muumbo, Access to electricity in informal settlements: Literature review and load curve estimation, in: 2023 IEEE PES/IAS PowerAfrica, IEEE, 2023.
+N.~Stevanato, R.~Mereu, A.~Brasco, A.~Muumbo, Access to electricity in informal
+  settlements: Literature review and load curve estimation, in: 2023 IEEE
+  PES/IAS PowerAfrica, IEEE, 2023.
 
 \bibitem{mensah2022electricity}
-J.~K. Mensah, Electricity and informal settlements: Towards achieving sdg 7 in developing countries, Energy Research \& Social Science 93 (2022) 102844.
-\newblock \href {https://doi.org/10.1016/j.erss.2022.102844} {\path{doi:10.1016/j.erss.2022.102844}}.
+J.~K. Mensah, Electricity and informal settlements: Towards achieving sdg 7 in
+  developing countries, Energy Research \& Social Science 93 (2022) 102844.
+\newblock \href {https://doi.org/10.1016/j.erss.2022.102844}
+  {\path{doi:10.1016/j.erss.2022.102844}}.
 
 \bibitem{WorldBankESMAP2018}
 Tracking sdg7: The energy progress report (2018).
 
 \bibitem{BhatiaAngelou2015}
-M.~Bhatia, N.~Angelou, \href{https://www.esmap.org/node/55526}{Beyond connections: Energy access redefined} (2015).
+M.~Bhatia, N.~Angelou, \href{https://www.esmap.org/node/55526}{Beyond
+  connections: Energy access redefined} (2015).
 \newline\urlprefix\url{https://www.esmap.org/node/55526}
 
 \bibitem{Bollen2000}
-M.~H.~J. Bollen, Understanding Power Quality Problems: Voltage Sags and Interruptions, Wiley-IEEE Press, New York, 2000.
+M.~H.~J. Bollen, Understanding Power Quality Problems: Voltage Sags and
+  Interruptions, Wiley-IEEE Press, New York, 2000.
 
 \bibitem{Dugan2012}
-R.~C. Dugan, M.~F. McGranaghan, S.~Santoso, H.~W. Beaty, Electrical Power Systems Quality, 3rd Edition, McGraw-Hill, New York, 2012.
+R.~C. Dugan, M.~F. McGranaghan, S.~Santoso, H.~W. Beaty, Electrical Power
+  Systems Quality, 3rd Edition, McGraw-Hill, New York, 2012.
 
 \bibitem{IEEE1159_2019}
-{IEEE Power and Energy Society}, Ieee recommended practice for monitoring electric power quality (2019).
-\newblock \href {https://doi.org/10.1109/IEEESTD.2019.8796486} {\path{doi:10.1109/IEEESTD.2019.8796486}}.
+{IEEE Power and Energy Society}, Ieee recommended practice for monitoring
+  electric power quality (2019).
+\newblock \href {https://doi.org/10.1109/IEEESTD.2019.8796486}
+  {\path{doi:10.1109/IEEESTD.2019.8796486}}.
 
 \bibitem{IEEE1100_2005}
-{IEEE Power Engineering Society}, Ieee recommended practice for powering and grounding electronic equipment, revision of IEEE Std 1100-1999 (2006).
-\newblock \href {https://doi.org/10.1109/IEEESTD.2006.250610} {\path{doi:10.1109/IEEESTD.2006.250610}}.
+{IEEE Power Engineering Society}, Ieee recommended practice for powering and
+  grounding electronic equipment, revision of IEEE Std 1100-1999 (2006).
+\newblock \href {https://doi.org/10.1109/IEEESTD.2006.250610}
+  {\path{doi:10.1109/IEEESTD.2006.250610}}.
 
 \bibitem{IEC61508_2010_CMV}
-Functional safety of electrical/electronic/programmable electronic safety-related systems -- parts 1--7 (commented version), commented version of IEC 61508 (Parts 1--7) (2010).
+Functional safety of electrical/electronic/programmable electronic
+  safety-related systems -- parts 1--7 (commented version), commented version
+  of IEC 61508 (Parts 1--7) (2010).
 
 \bibitem{Bollen2003}
-M.~H.~J. Bollen, What is power quality?, Electric Power Systems Research 66~(1) (2003) 5--14.
-\newblock \href {https://doi.org/10.1016/S0378-7796(03)00067-1} {\path{doi:10.1016/S0378-7796(03)00067-1}}.
+M.~H.~J. Bollen, What is power quality?, Electric Power Systems Research 66~(1)
+  (2003) 5--14.
+\newblock \href {https://doi.org/10.1016/S0378-7796(03)00067-1}
+  {\path{doi:10.1016/S0378-7796(03)00067-1}}.
 
 \bibitem{Arrillaga2000}
-J.~Arrillaga, N.~R. Watson, S.~Chen, Power System Quality Assessment, John Wiley \& Sons, Chichester, UK, 2000.
+J.~Arrillaga, N.~R. Watson, S.~Chen, Power System Quality Assessment, John
+  Wiley \& Sons, Chichester, UK, 2000.
 
 \bibitem{Caramia2009}
-P.~Caramia, G.~Carpinelli, P.~Verde, Power Quality Indices in Liberalized Markets, John Wiley \& Sons, Chichester, UK, 2009.
+P.~Caramia, G.~Carpinelli, P.~Verde, Power Quality Indices in Liberalized
+  Markets, John Wiley \& Sons, Chichester, UK, 2009.
 
 \bibitem{ANSI_C84_1_2020}
 Electric power systems and equipment—voltage ratings (60 hz) (2020).
 
 \bibitem{PowerSonicVoltageCountry}
-{Power Sonic}, Single-phase and three-phase voltage by country, \url{https://www.power-sonic.com/single-phase-and-three-phase-voltage-by-country/}, accessed: 19 February 2026 (n.d.).
+{Power Sonic}, Single-phase and three-phase voltage by country,
+  \url{https://www.power-sonic.com/single-phase-and-three-phase-voltage-by-country/},
+  accessed: 19 February 2026 (n.d.).
 
 \bibitem{UgandaGridCode2003}
-{Government of Uganda}, \href{https://www.era.go.ug/}{The electricity (primary grid code) regulations, 2003}, Uganda Gazette, statutory Instrument No. 24 of 2003 (2003).
+{Government of Uganda}, \href{https://www.era.go.ug/}{The electricity (primary
+  grid code) regulations, 2003}, Uganda Gazette, statutory Instrument No. 24 of
+  2003 (2003).
 \newline\urlprefix\url{https://www.era.go.ug/}
 
 \bibitem{UgandaBuildingCode2019}
-{Government of Uganda}, The national building (standards for electrical installations in buildings) code, 2019, Statutory Instruments Supplement No. 21, Statutory Instrument No. 58, published in The Uganda Gazette, Vol. CXII, No. 40, 16 August 2019 (2019).
+{Government of Uganda}, The national building (standards for electrical
+  installations in buildings) code, 2019, Statutory Instruments Supplement No.
+  21, Statutory Instrument No. 58, published in The Uganda Gazette, Vol. CXII,
+  No. 40, 16 August 2019 (2019).
 
 \bibitem{spotlightkampala}
-{Spotlight Kampala}, Spotlight kampala, \url{https://spotlightkampala.com/}, accessed: 7 January 2026 (2025).
+{Spotlight Kampala}, Spotlight kampala, \url{https://spotlightkampala.com/},
+  accessed: 7 January 2026 (2025).
 
 \bibitem{nline}
 {nline}, nline, \url{https://nline.io/}, accessed: 16 February 2026 (2025).

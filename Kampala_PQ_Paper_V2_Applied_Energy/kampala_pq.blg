@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: kampala_pq.aux
+The style file: elsarticle-num.bst
+Database file #1: references.bib
+Warning--entry type for "SDG7Report2020" isn't style-file defined
+--line 1 of file references.bib
+Warning--entry type for "IEEE1159_2019" isn't style-file defined
+--line 188 of file references.bib
+Warning--entry type for "IEEE1100_2005" isn't style-file defined
+--line 197 of file references.bib
+Warning--entry type for "IEC61508_2010_CMV" isn't style-file defined
+--line 207 of file references.bib
+Repeated entry---line 242 of file references.bib
+ : @standard{IEEE1159_2019
+ :                        ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "ANSI_C84_1_2020" isn't style-file defined
+--line 249 of file references.bib
+Repeated entry---line 279 of file references.bib
+ : @standard{ANSI_C84_1_2020
+ :                          ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "BhatiaAngelou2015" isn't style-file defined
+--line 287 of file references.bib
+Repeated entry---line 295 of file references.bib
+ : @report{BhatiaAngelou2015
+ :                          ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "WorldBankESMAP2018" isn't style-file defined
+--line 302 of file references.bib
+Too many commas in name 1 of "IEA, IRENA, UNSD, World Bank, WHO" for entry SDG7Report2020
+while executing---line 1497 of file elsarticle-num.bst
+Too many commas in name 1 of "IEA, IRENA, UNSD, World Bank, WHO" for entry SDG7Report2020
+while executing---line 1497 of file elsarticle-num.bst
+Warning--empty pages in stevanato2023access
+You've used 29 entries,
+            2952 wiz_defined-function locations,
+            861 strings with 10756 characters,
+and the built_in function-call counts, 7104 in all, are:
+= -- 688
+> -- 174
+< -- 2
++ -- 77
+- -- 48
+* -- 378
+:= -- 930
+add.period$ -- 36
+call.type$ -- 29
+change.case$ -- 39
+chr.to.int$ -- 3
+cite$ -- 30
+duplicate$ -- 239
+empty$ -- 918
+format.name$ -- 58
+if$ -- 1962
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 18
+newline$ -- 108
+num.names$ -- 26
+pop$ -- 243
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 524
+stack$ -- 0
+substring$ -- 161
+swap$ -- 52
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 39
+width$ -- 31
+write$ -- 259
+(There were 5 error messages)
