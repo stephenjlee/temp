@@ -117,7 +117,7 @@ A grid connection alone does not ensure safe, usable, or equitable electricity a
 \item Power quality sensors were deployed to monitor voltage quality and reliability in 25 urban informal and formal settlements for over 2 months
 \item Informal settlements experience prolonged low voltage conditions and severe voltage variations compared to formal settlements
 \item Connection modalities significantly influence poor voltage conditions,  with unmetered users facing the most unreliable power supply.
-\item Predictability of voltage fluctuations and low voltage events are demonstrated with a 3-dimensional state transition probability and entropy model
+\item \suggestreplacesjl{Predictability of voltage fluctuations and low voltage events are demonstrated with a 3-dimensional state transition probability and entropy model}{Predictability of voltage fluctuations and low voltage events is characterized using a Markov chain voltage quality model with entropy-based predictability measures}
 \item Results challenge binary access metrics and highlight voltage quality, connection modalities and  “temporal energy poverty”
 \end{highlights}
 
@@ -473,7 +473,7 @@ The joint entropy quantifies the total uncertainty associated with the sequence 
 
 \end{comment}
 \section{Results}
-This section examines voltage variation across the study area, beginning with patterns observed within individual settlements, followed by differences between settlements. It then compares voltage characteristics between formal and informal settlement types, explores variation by connection type, time of day, predictability and entropy-based analysis of voltage quality.
+This section examines voltage variation across the study area, beginning with patterns observed within individual settlements, followed by differences between settlements. It then compares voltage characteristics between formal and informal settlement types, explores variation by connection type and time of day, and assesses voltage \suggestreplacesjl{predictability and entropy-based analysis of voltage quality.}{predictability using a Markov chain voltage quality model and entropy-based predictability measures.}
 
 \label{sec:results}
 \subsection{Overview of Voltage Quality Across Settlement Types}
@@ -595,7 +595,7 @@ This made it difficult for users to adjust their activities around the erratic p
 
 
 
-\subsection{Voltage State Transition Matrix and Entropy Analysis}
+\subsection{\suggestreplacesjl{Voltage State Transition Matrix and Entropy Analysis}{Markov Chain Voltage Quality Model and Entropy-Based Predictability Measures}}
 
 \begin{comment}
     The heatmap in Figure~\ref{fig:markov} shows a log-normalized transition matrix of the Top 25 most frequent voltage state transitions. Due to the high dimensionality of the entire 108×108 matrix, we extracted the 25 most frequently observed states to form a compact, interpretable submatrix. Each state is defined by a triplet: Time-of-day (e.g., [18–20) hours), Duration class (how long the participant has remained in that state: 0–2, 2–4, or 4+ hours), and Voltage condition: Acceptable (A), Unacceptable (U), or Outage (O).
