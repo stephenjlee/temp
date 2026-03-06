@@ -397,20 +397,37 @@ p(x_t \mid x_{t-1}) =
 \]
 {\color{sjlmutedblue}This is the maximum-likelihood estimator (MLE) for discrete transition probabilities. In what follows, we write $p$ in place of $\hat{p}$ for notational convenience.}
 
-High self-transition probabilities indicate persistent voltage conditions, while off-diagonal probabilities capture transitions between Usable, Unacceptable, and Outage states across different time-of-day and duration contexts.
+{\color{sjlmutedred}\textbf{[SJL20260305, Suggested Text to be Replaced]}}
+
+{\color{sjlmutedred}High self-transition probabilities indicate persistent voltage conditions, while off-diagonal probabilities capture transitions between Usable, Unacceptable, and Outage states across different time-of-day and duration contexts.
 
 To further characterize the structure and stability of voltage dynamics, we compute entropy-based measures of predictability. While transition probabilities quantify persistence at the state level, entropy provides a summary measure of the overall uncertainty in voltage evolution. Lower entropy values indicate more predictable dynamics, whereas higher values reflect greater volatility and unpredictability.
 
-We first compute the conditional entropy of transitions, defined as
-
+We first compute the conditional entropy of transitions, defined as}
 \[
+\color{sjlmutedred}
 H(X_t \mid X_{t-1}) =
 - \sum_{x_{t-1} \in \mathcal{X}} p(x_{t-1})
 \sum_{x_t \in \mathcal{X}} p(x_t \mid x_{t-1})
 \log p(x_t \mid x_{t-1}),
 \]
+{\color{sjlmutedred}which measures the average uncertainty of the next voltage state given the current state. This metric captures the inherent stochasticity of the process after conditioning on time interval, duration class, and voltage condition. Lower values indicate stronger persistence and more structured dynamics, whereas higher values indicate more frequent and less predictable transitions.}
 
-which measures the average uncertainty of the next voltage state given the current state. This metric captures the inherent stochasticity of the process after conditioning on time interval, duration class, and voltage condition. Lower values indicate stronger persistence and more structured dynamics, whereas higher values indicate more frequent and less predictable transitions.
+{\color{sjlmutedblue}\textbf{[SJL20260305, Suggested New Text]}}
+
+{\color{sjlmutedblue}Because the composite state encodes time-of-day, duration class, and voltage condition jointly, the structure of the transition matrix reflects both deterministic temporal evolution and stochastic voltage dynamics. Consider a system that remains persistently in Usable voltage: once the duration class saturates at 4+ hours, the only change at each time step is the advance of the time-of-day bin. Within a two-hour bin the system remains in the same composite state (a diagonal entry), and at the bin boundary it transitions to the next time-of-day bin with the same voltage condition and saturated duration class (a structured off-diagonal entry). The same regular pattern holds for a system persistently in Outage. In either case, each row of the transition matrix concentrates its probability mass on one or two successor states, and the remaining entries are near zero.
+
+By contrast, when voltage conditions change frequently---for example, short-duration episodes of Unacceptable voltage interspersed with brief recoveries to Usable---the system cycles through many duration classes and voltage labels at various times of day. This spreads the empirical conditional probability mass across a larger set of off-diagonal entries in each row, reflecting less structured and less predictable dynamics.
+
+The conditional entropy $H(X_t \mid X_{t-1})$ formalizes this distinction. For each source state $x_{t-1}$, we first evaluate the Shannon entropy of that row's conditional distribution $p(\cdot \mid x_{t-1})$, which measures how many successor states carry appreciable probability. These per-row entropies are then averaged over all source states, weighted by the stationary distribution $p(x_{t-1})$:}
+\[
+\color{sjlmutedblue}
+H(X_t \mid X_{t-1}) =
+- \sum_{x_{t-1} \in \mathcal{X}} p(x_{t-1})
+\sum_{x_t \in \mathcal{X}} p(x_t \mid x_{t-1})
+\log p(x_t \mid x_{t-1}).
+\]
+{\color{sjlmutedblue}When the system is persistent, each row's entropy is low because probability is concentrated on very few successors; the weighted average is therefore low. When the system undergoes frequent, short-duration state changes, each row's entropy is higher because probability is dispersed across many successors; the weighted average rises accordingly. A higher value of $H(X_t \mid X_{t-1})$ therefore indicates that, on average, knowing the current composite state leaves more residual uncertainty about the next state---the voltage process is less predictable.}
 
 We also compute the joint entropy of consecutive states
 
@@ -600,7 +617,7 @@ This made it difficult for users to adjust their activities around the erratic p
 \begin{comment}
     The heatmap in Figure~\ref{fig:markov} shows a log-normalized transition matrix of the Top 25 most frequent voltage state transitions. Due to the high dimensionality of the entire 108×108 matrix, we extracted the 25 most frequently observed states to form a compact, interpretable submatrix. Each state is defined by a triplet: Time-of-day (e.g., [18–20) hours), Duration class (how long the participant has remained in that state: 0–2, 2–4, or 4+ hours), and Voltage condition: Acceptable (A), Unacceptable (U), or Outage (O).
 \end{comment}
-The heatmap in Figure~\ref{fig:markov} shows a log-normalized transition matrix of the 25 most frequent voltage state transition probabilities based on the triplets defined in the methodology. The dominant diagonal elements highlight temporal persistence in the voltage behavior, which is \suggestreplacesjl{consistent with our semi-Markov assumptions}{consistent with the duration-dependent dynamics captured by the enriched-state Markov model}. However, notable off-diagonal clusters reveal common transitions, such as shifts from Unacceptable to Outage states around evening hours (e.g., [18-20)) and sustained outages in certain time blocks.
+The heatmap in Figure~\ref{fig:markov} shows a log-normalized transition matrix of the 25 most frequent voltage state transition probabilities based on the triplets defined in the methodology. \suggestreplacesjl{The dominant diagonal elements highlight temporal persistence in the voltage behavior, which is consistent with our semi-Markov assumptions. However, notable off-diagonal clusters reveal common transitions, such as shifts from Unacceptable to Outage states around evening hours (e.g., [18-20)) and sustained outages in certain time blocks.}{The dominant diagonal elements correspond to the system remaining in the same composite state within a given time-of-day bin. Structured off-diagonal entries---such as transitions to the next time-of-day bin with the same voltage condition and saturated duration class---also reflect voltage persistence; together, these entries confirm that voltage conditions tend to be temporally sticky, consistent with the duration-dependent dynamics captured by the enriched-state Markov model. However, notable off-diagonal clusters involving changes in the voltage condition itself reveal genuine state transitions, such as shifts from Unacceptable to Outage around evening hours (e.g., [18-20)) and sustained outages in certain time blocks. The prevalence of such entries indicates periods where voltage dynamics become less predictable.}
 
 \begin{figure}[H]
     \centering
@@ -610,7 +627,7 @@ Each state is defined by a triplet: Time-of-day (e.g., [18–20) hours), Duratio
     \label{fig:markov}
 \end{figure}
 
-Figure ~\ref{fig:entropy_voltage} compares the entropy of voltage states and the probability of usable voltage across formal and informal settlements. Entropy serves as a measure of unpredictability in voltage quality, where higher entropy values reflect greater variability in voltage behavior. Informal settlements tend to exhibit higher entropy levels, indicating more erratic voltage patterns, while formal areas generally show lower entropy and greater voltage stability. This pattern is further accompanied by the probability of usable voltage, with formal settlements consistently achieving higher probabilities of maintaining voltage within acceptable thresholds. Notably, sites such as kyeb, mlg2, and kbyo in informal settlements show both high entropy and low usable voltage probability, underscoring their vulnerability to poor and unpredictable power supply. These findings reinforce the connection between socioeconomic position (proxied by measuring informal against formal communities) infrastructure condition and voltage reliability, suggesting the need for targeted technical and policy interventions in informal areas.
+Figure ~\ref{fig:entropy_voltage} compares the entropy of voltage states and the probability of usable voltage across formal and informal settlements. \suggestreplacesjl{Entropy serves as a measure of unpredictability in voltage quality, where higher entropy values reflect greater variability in voltage behavior. Informal settlements tend to exhibit higher entropy levels, indicating more erratic voltage patterns, while formal areas generally show lower entropy and greater voltage stability.}{The conditional entropy $H(X_t \mid X_{t-1})$ quantifies the average per-row uncertainty of the transition matrix, weighted by the stationary distribution: when each composite state has few likely successors, the weighted average is low and the voltage process is predictable; when probability mass is dispersed across many successors---reflecting frequent, short-duration state changes and voltage condition shifts---the entropy is high. Informal settlements tend to exhibit higher entropy, indicating that their voltage dynamics are more erratic and harder to anticipate, while formal areas show lower entropy and more structured voltage behavior.} This pattern is further accompanied by the probability of usable voltage, with formal settlements consistently achieving higher probabilities of maintaining voltage within acceptable thresholds. Notably, sites such as kyeb, mlg2, and kbyo in informal settlements show both high entropy and low usable voltage probability, underscoring their vulnerability to poor and unpredictable power supply. These findings reinforce the connection between socioeconomic position (proxied by measuring informal against formal communities) infrastructure condition and voltage reliability, suggesting the need for targeted technical and policy interventions in informal areas.
 
 \begin{figure}[H]
     \centering
@@ -637,6 +654,8 @@ These dynamics suggest a form of temporal energy poverty, a condition in which e
 \end{comment}
 
 Our findings also underscore the importance of temporal modeling in understanding electricity reliability. A purely instantaneous classification would obscure the fact that users often experience long spells of poor voltage quality, which may be more damaging than brief, fluctuating voltages. \suggestreplacesjl{The semi-Markov structure helps capture this “stickiness” in Unacceptable states.}{By encoding duration class in the state definition, the Markov model captures this ``stickiness'' in Unacceptable states: a household that has persisted in a given voltage condition for a longer period exhibits distinct transition probabilities from one that just entered.}
+
+{\color{sjlmutedblue}\textbf{[SJL20260305, Suggested New Text]}\ The entropy analysis makes this concrete: in settlements where voltage conditions change frequently and unpredictably, each row of the transition matrix has probability dispersed across many successor states, yielding higher conditional entropy. For households, this translates directly into an inability to plan cooking, business, or study activities around the power supply---not because power is always poor, but because its quality at any given moment is difficult to anticipate from its recent history.}
 
 Together, these findings suggest that electricity access frameworks must evolve to better capture the temporal and infrastructural dimensions of service quality, particularly in rapidly urbanizing informal contexts. While the Multi-Tier Framework has advanced access measurement beyond binary connection indicators, our results demonstrate that persistence, volatility, and predictability of voltage conditions remain underexamined components of functional electrification. Policy efforts should therefore extend beyond grid expansion and nominal tier compliance to incorporate high-resolution power quality monitoring, infrastructure equity at the household level, and targeted investments in safe and appropriately sized service connections. Integrating temporal voltage metrics into national reporting systems and SDG 7 monitoring could improve alignment between measured access and lived experience. In parallel, utilities and planners should consider community-based monitoring, proactive load and power quality forecasting, and real-time communication tools to mitigate the impacts of voltage instability. Without such measures, households in informal settlements may remain formally connected and statistically “served,” yet functionally constrained in their ability to use electricity for productive, health-supporting, and welfare-enhancing activities.
 
